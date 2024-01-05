@@ -1,6 +1,6 @@
-# 🐇 Zod Env <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
+# 🐇 Zod Dev <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
 
-**Functional mixin that adds "envParse" to [Zod](https://zod.dev/) in order to dynamically disable run-time parsing**  
+**Functional mixin that adds "devParse" to [Zod](https://zod.dev/) to disable run-time parsing in production**  
 
 ## Motivation
 
@@ -31,20 +31,20 @@ to toggle parsing based on any condition you need._
 ## Usage
 
 ```bash
-npm install zod zod-env
+npm install zod zod-dev
 ```
 
-Simply wrap your Zod schema with the `withEnv` function, and provide a condition
+Simply wrap your Zod schema with the `withDev` function, and provide a condition
 that determines whether run-time parsing should be enabled. For example if you
 are using [Vite]() the following should suffice:
 
 ```ts
 import { z } from 'zod';
-import { withEnv } from 'zod-env'
+import { withDev } from 'zod-dev'
 
 const isDev = import.meta.env.MODE !== "production"
 
-const person = withEnv(isDev, z.object({
+const person = withDev(isDev, z.object({
     name: z.string(),
     email: z.string().email(),
     age: z.number().int().min(0),
@@ -56,23 +56,23 @@ const value = {
     age: 24,
 }
 
-const result = person.envParse(value)
+const result = person.devParse(value)
 ```
 
-![image](https://github.com/schalkventer/zod-env/assets/14258328/175e5f9d-0b5e-4804-b04e-e20bd36c04f0)
+![image](https://github.com/schalkventer/zod-dev/assets/14258328/175e5f9d-0b5e-4804-b04e-e20bd36c04f0)
 
 If you don't want to pass the condition directly each time, you can use the
-`createWithEnv` constructor to create a custom `withEnv` function that accepts a
+`createWithDev` constructor to create a custom `withDev` function that accepts a
 condition as the first argument.
 
 ```ts
 import { z } from 'zod';
-import { createWithEnv } from 'zod-env'
+import { createWithDev } from 'zod-dev'
 
 const isDev = import.meta.env.MODE !== "production"
-const withEnv = createWithEnv(isDev)
+const withDev = createWithDev(isDev)
 
-const person = withEnv(z.object({
+const person = withDev(z.object({
     name: z.string(),
     email: z.string().email(),
     age: z.number().int().min(0),
@@ -80,4 +80,4 @@ const person = withEnv(z.object({
 ```
 
 It is recommended that you create a utility file that simply exports your custom
-`withEnv` function for use throughout your project.
+`withDev` function for use throughout your project.

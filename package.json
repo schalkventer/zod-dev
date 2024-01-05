@@ -1,23 +1,23 @@
 {
-  "name": "zod-env",
+  "name": "zod-dev",
   "version": "0.0.2",
-  "description": "Functional mixin that adds 'envParse' to Zod in order to dynamically disable run-time parsing",
+  "description": "Functional mixin that adds 'devParse' to Zod in order to dynamically disable run-time parsing",
+  "author": "Schalk Venter <venterschalk@gmail.com> (http://schalkventer.me/)",
   "type": "module",
-  "source": "src/main.ts",
+  "source": "src/zod-dev.ts",
   "exports": {
-    "require": "./dist/zod-env.cjs",
-    "default": "./dist/zod-env.modern.js"
+    "require": "./dist/zod-dev.cjs",
+    "default": "./dist/zod-dev.modern.js"
   },
-  "main": ".dist/zod-env.cjs",
-  "module": "./dist/zod-env.module.js",
-  "unpkg": "./dist/zod-env.umd.js",
+  "main": ".dist/zod-dev.cjs",
+  "module": "./dist/zod-dev.module.js",
+  "unpkg": "./dist/zod-dev.umd.js",
   "scripts": {
     "build": "microbundle"
   },
-  "author": "Schalk Venter <venterschalk@gmail.com> (http://schalkventer.me/)",
-  "license": "ISC",
   "devDependencies": {
     "microbundle": "^0.15.1",
     "zod": "^3.22.4"
-  }
+  },
+  "license": "ISC"
 }
