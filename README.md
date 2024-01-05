@@ -1,4 +1,4 @@
-![image](https://github.com/schalkventer/zod-dev/assets/14258328/653122c2-ac7f-4646-9346-b04ba1edc9fb)# 🐇 Zod Dev <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
+#🐇 Zod Dev <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
 [![](https://img.shields.io/npm/v/zod-dev)](https://www.npmjs.com/package/zod-dev) [![](https://img.shields.io/npm/dm/zod-dev.svg)](https://www.npmjs.com/package/zod-dev) ![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social) 
 
 **Functional mixin that adds "devParse" to [Zod](https://zod.dev/) to disable run-time parsing in production**  
@@ -24,8 +24,8 @@ benefits to disabling run-time validation in production environments.
 
 As per [Runtype Benchmarks](https://moltar.github.io/typescript-runtime-type-benchmarks/):
 
-![image](https://github.com/schalkventer/zod-dev/assets/14258328/a01fa8a7-6a34-4fcc-96da-0571f18b1345)
 ![image](https://github.com/schalkventer/zod-dev/assets/14258328/490bbee0-d27c-44b1-a9d2-a151fc5aa756)
+![image](https://github.com/schalkventer/zod-dev/assets/14258328/a01fa8a7-6a34-4fcc-96da-0571f18b1345)
 
 This plugin provides the above, while still preserving Zod's type inference
 functionality.
