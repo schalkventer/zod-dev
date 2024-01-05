@@ -21,12 +21,12 @@ usage of conditional validation using [AJV](https://ajv.js.org/) as part of a
 [data&#8209;oriented&nbsp;programming](https://en.wikipedia.org/wiki/Data-oriented_design)
 approach.
 
-> **Moreover, in Data-Oriented Programming, it is quite common to have some data
+>**Moreover, in Data-Oriented Programming, it is quite common to have some data
 > validation parts enabled only during development and to disable them when the
 > system runs in production.**
 >
-> \- [Data-oriented Programming
-> (2022)]([https://www.manning.com/books/data-oriented-programming](https://blog.klipse.tech/javascript/2021/09/30/data-validation-with-json-schema.html))
+> — _[Data-oriented Programming
+> (2022)]([https://www.manning.com/books/data-oriented-programming](https://blog.klipse.tech/javascript/2021/09/30/data-validation-with-json-schema.html))_
 
 There are several benefits to using Zod over AJV, most prominent being automatic
 inference of static types from schemas. However, Zod is primarily designed for
