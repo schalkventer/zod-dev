@@ -3,7 +3,7 @@
 
 **Functional mixin that adds "devParse" to [Zod](https://zod.dev/) to disable run-time parsing in production**  
 
-## Motivation
+# Motivation
 
 Primarily inspired by a [Yehonathan&nbsp;Sharvit](https://www.manning.com/books/data-oriented-programming)'s usage of conditional validation using [AJV](https://ajv.js.org/) as part of a
 [data&#8209;oriented&nbsp;programming](https://en.wikipedia.org/wiki/Data-oriented_design)
@@ -19,22 +19,7 @@ strict Typescript type-safety, especially for usage at the edges of your
 project's data ingress and egress. For this reason, Zod does not naturally lend
 itself well to loosely typed TypeScript or pure JavaScript projects. 
 
-## Performance
-
-Due to the nature of Zod's schema inference, it is several orders
-of magnitude slower than AJV at run-time parsing. This means that even when
-using Zod in a strict type-safety manner, there might still be performance
-benefits to disabling run-time validation in production environments.
-
-As per [Runtype Benchmarks](https://moltar.github.io/typescript-runtime-type-benchmarks/):
-
-![image](https://github.com/schalkventer/zod-dev/assets/14258328/490bbee0-d27c-44b1-a9d2-a151fc5aa756)
-![image](https://github.com/schalkventer/zod-dev/assets/14258328/a01fa8a7-6a34-4fcc-96da-0571f18b1345)
-
-This plugin provides the above, while still preserving Zod's type inference
-functionality.
-
-## Usage
+# Usage
 
 ```bash
 npm install zod zod-dev
@@ -87,3 +72,19 @@ const person = withDev(z.object({
 
 It is recommended that you create a utility file that simply exports your custom
 `withDev` function for use throughout your project.
+
+# Performance
+
+Due to the nature of Zod's schema inference, it is several orders
+of magnitude slower than AJV at run-time parsing. This means that even when
+using Zod in a strict type-safety manner, there might still be performance
+benefits to disabling run-time validation in production environments.
+
+As per [Runtype Benchmarks](https://moltar.github.io/typescript-runtime-type-benchmarks/):
+
+![image](https://github.com/schalkventer/zod-dev/assets/14258328/490bbee0-d27c-44b1-a9d2-a151fc5aa756)
+![image](https://github.com/schalkventer/zod-dev/assets/14258328/a01fa8a7-6a34-4fcc-96da-0571f18b1345)
+
+If you're interested in the reason for the difference you can have a look at [the follow conversation](https://github.com/colinhacks/zod/issues/205).
+
+# FAQ
