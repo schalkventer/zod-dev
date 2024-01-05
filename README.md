@@ -1,7 +1,14 @@
+<!-- omit in toc -->
 # 🐇 Zod Dev <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
 [![](https://img.shields.io/npm/v/zod-dev)](https://www.npmjs.com/package/zod-dev) [![](https://img.shields.io/npm/dm/zod-dev.svg)](https://www.npmjs.com/package/zod-dev) ![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social) 
 
 **Functional mixin that adds "devParse" to [Zod](https://zod.dev/) to disable run-time parsing in production**  
+
+- [Motivation](#motivation)
+- [Usage](#usage)
+- [Performance](#performance)
+- [FAQ](#faq)
+
 
 # Motivation
 
@@ -87,3 +94,11 @@ As per [Runtype Benchmarks](https://moltar.github.io/typescript-runtime-type-ben
 If you're interested in the reason for the difference you can have a look at [the follow conversation](https://github.com/colinhacks/zod/issues/205).
 
 # FAQ
+
+**Can I use other conditions to disable run-time checking?**
+
+This plugin was created for the use case of toggling run-time checking between different environments, however since it merely accepts a boolean condition, parsing can effectively be toggle based on anything that can be expressed as `true` or `false` in JavaScript.
+
+**Is this meant to replace the "official" usage of Zod?**
+
+No, 
