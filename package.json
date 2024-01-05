@@ -1,7 +1,7 @@
 {
   "name": "zod-env",
   "version": "0.0.2",
-  "description": "",
+  "description": "Functional mixin that adds 'envParse' to Zod in order to dynamically disable run-time parsing",
   "type": "module",
   "source": "src/main.ts",
   "exports": {

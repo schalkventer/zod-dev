@@ -1,7 +1,6 @@
 # 🐇 Zod Env <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
 
-**Functional mixin that adds "envParse" to [Zod](https://zod.dev/) to
-dynamically disable run-time parsing**  
+**Functional mixin that adds "envParse" to [Zod](https://zod.dev/) in order to dynamically disable run-time parsing**  
 
 ## Motivation
 
