@@ -5,11 +5,13 @@
 
 ## Motivation
 
-Primarily inspired by a
-[Yehonathan&nbsp;Sharvit](https://www.manning.com/books/data-oriented-programming)'s
-usage of conditional validation using [AJV](https://ajv.js.org/) as part of a
+Primarily inspired by a [Yehonathan&nbsp;Sharvit](https://www.manning.com/books/data-oriented-programming)'s usage of conditional validation using [AJV](https://ajv.js.org/) as part of a
 [data&#8209;oriented&nbsp;programming](https://en.wikipedia.org/wiki/Data-oriented_design)
 approach.
+
+> **Moreover, in Data-Oriented Programming, it is quite common to have some data validation parts enabled only during development and to disable them when the system runs in production.**
+>
+> \- [Data-oriented Programming (2022)]([https://www.manning.com/books/data-oriented-programming](https://blog.klipse.tech/javascript/2021/09/30/data-validation-with-json-schema.html))
 
 There are several benefits to using Zod over AJV, most prominent being automatic
 inference of static types from schemas. However, Zod is primarily designed for
@@ -17,7 +19,9 @@ strict Typescript type-safety, especially for usage at the edges of your
 project's data ingress and egress. For this reason, Zod does not naturally lend
 itself well to loosely typed TypeScript or pure JavaScript projects. 
 
-Additionally, due to the nature of Zod's schema inference, it is several orders
+## Performance
+
+Due to the nature of Zod's schema inference, it is several orders
 of magnitude slower than AJV at run-time parsing. This means that even when
 using Zod in a strict type-safety manner, there might still be performance
 benefits to disabling run-time validation in production environments.
@@ -29,10 +33,6 @@ As per [Runtype Benchmarks](https://moltar.github.io/typescript-runtime-type-ben
 
 This plugin provides the above, while still preserving Zod's type inference
 functionality.
-
-_Note that this plugin was created as means to toggle parsing between different
-environment, however since it merely accepts a boolean condition, it can be used
-to toggle parsing based on any condition you need._
 
 ## Usage
 
