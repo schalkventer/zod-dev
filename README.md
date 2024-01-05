@@ -1,27 +1,27 @@
-# 🐇 Zod Env
+# 🐇 Zod Env <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
 
 **Functional mixin that adds "envParse" to [Zod](https://zod.dev/) for
-conditionally disabling run-time parsing**
+conditionally disabling run-time parsing**  
 
 ## Motivation
 
 Primarily inspired by a
 [Yehonathan&nbsp;Sharvit](https://www.manning.com/books/data-oriented-programming)'s
-usage of conditional run-time validation using [AJV](https://ajv.js.org/) as
+usage of conditional validation using [AJV](https://ajv.js.org/) as
 part of a
 [data&#8209;oriented&nbsp;programming](https://en.wikipedia.org/wiki/Data-oriented_design)
 approach.
 
-While there are several benefits to using Zod over AJV, such as the automatic
-inference of types based on the created run-time schema, Zod was primarily
-designed for strict type-safety, especially for usage at the edges of your data
-ingress and egress. This means that Zod does not naturally lend itself to
+There are several benefits to using Zod over AJV, such as the automatic
+inference of types based on the created run-time schema. Howvever, Zod was primarily
+designed for strict type-safety, especially at the edges of your data
+ingress and egress. Therefore, Zod does not naturally lend itself to
 weaker-typed TypeScript or pure JavaScript projects. 
 
-However, due to the nature of Zod's schema inference, it is several orders of
-magnitude slower than AJV and other pure validation libraries. This means that
-even when using Zod in a strict type-safety manner, there might still be
-performance benefits to disabling run-time validation in production.
+Furthermore, due to the nature of Zod's schema inference, it is several orders of
+magnitude slower than AJV. This means that even when using Zod in a strict type-safety 
+manner, there might still be performance benefits to disabling run-time validation 
+in production.
 
 This plugin provides the above, while still preserving Zod's type inference
 functionality.
@@ -51,7 +51,9 @@ const value = {
 const result = person.envParse(value)
 ```
 
-The following `.ENV` variable will disable run-time checking:
+![image](https://github.com/schalkventer/zod-env/assets/14258328/175e5f9d-0b5e-4804-b04e-e20bd36c04f0)
+
+The following `.ENV` variable will disable run-time checking.
 
 ```dockerfile
 NODE_ENV="production"
