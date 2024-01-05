@@ -3,15 +3,15 @@
   "version": "0.0.8",
   "description": "Functional mixin that adds 'devParse' to Zod in order to dynamically disable run-time parsing",
   "author": "Schalk Venter <venterschalk@gmail.com> (http://schalkventer.me/)",
-  "source": "src/zod-dev.ts",
-  "types": "dist/zod-dev.d.ts",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "exports": {
-    "require": "./dist/zod-dev.cjs",
-    "default": "./dist/zod-dev.modern.js"
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
   },
-  "main": "./dist/zod-dev.js",
-  "module": "./dist/zod-dev.module.js",
-  "unpkg": "./dist/zod-dev.umd.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "scripts": {
     "build": "microbundle"
   },
@@ -19,5 +19,14 @@
     "microbundle": "^0.15.1",
     "zod": "^3.22.4"
   },
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schalkventer/zod-dev.git"
+  },
+  "keywords": [
+    "zod",
+    "env"
+  ],
+  "bugs": "https://github.com/schalkventer/zod-dev/issues",
+  "license": "MIT"
 }
