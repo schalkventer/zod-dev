@@ -53,8 +53,7 @@ const result = person.devParse(value)
 ![image](https://github.com/schalkventer/zod-dev/assets/14258328/175e5f9d-0b5e-4804-b04e-e20bd36c04f0)
 
 If you don't want to pass the condition directly each time, you can use the
-`createWithDev` constructor to create a custom `withDev` function that accepts a
-condition as the first argument.
+`createWithDev` constructor to create a custom `withDev` function:
 
 ```ts
 import { z } from 'zod';
