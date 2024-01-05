@@ -5,8 +5,7 @@ conditionally disabling run-time parsing**
 
 ## Motivation
 
-
-<img align="right" src="https://github.com/schalkventer/zod-env/assets/14258328/e2927281-f07f-47d2-a1c6-40945ed3b6c6" width="600">Primarily inspired by a
+Primarily inspired by a
 [Yehonathan&nbsp;Sharvit](https://www.manning.com/books/data-oriented-programming)'s
 usage of conditional validation using [AJV](https://ajv.js.org/) as
 part of a
