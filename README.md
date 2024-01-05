@@ -1,5 +1,5 @@
 # 🐇 Zod Dev <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
-![](https://img.shields.io/npm/v/zod-dev) [![](https://img.shields.io/npm/dm/zod-dev.svg)](https://www.npmjs.com/package/zod-dev) ![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social) 
+[![](https://img.shields.io/npm/v/zod-dev)](https://www.npmjs.com/package/zod-dev) [![](https://img.shields.io/npm/dm/zod-dev.svg)](https://www.npmjs.com/package/zod-dev) ![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social) 
 
 **Functional mixin that adds "devParse" to [Zod](https://zod.dev/) to disable run-time parsing in production**  
 
