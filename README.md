@@ -4,8 +4,7 @@
 [![](https://img.shields.io/npm/dm/zod-dev.svg)](https://www.npmjs.com/package/zod-dev)
 ![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social) 
 
-**Functional mixin that adds "devParse" to [Zod](https://zod.dev/) to disable
-run-time parsing in production**  
+**A tiny 0.49kb functional mixin to disable [Zod](https://zod.dev/) run-time parsing.**  
 
 - [Motivation](#motivation)
 - [Usage](#usage)
@@ -28,15 +27,13 @@ approach.
 > — _[Data-oriented Programming
 > (2022)]([https://www.manning.com/books/data-oriented-programming](https://blog.klipse.tech/javascript/2021/09/30/data-validation-with-json-schema.html))_
 
-**There are several benefits to using Zod over AJV, most prominent being automatic
-inference of static types from schemas.**
-
-However, Zod is primarily designed for
+There are several benefits to using Zod over AJV, most prominent being automatic
+inference of static types from schemas. However, Zod is primarily designed for
 strict Typescript type-safety, especially for usage at the edges of your
 project's data ingress and egress. For this reason, Zod does not naturally lend
 itself well to loosely typed TypeScript or pure JavaScript projects. 
 
-This package is a tiny 0.49kb abstraction on top of Zod in order to get the IDE Intellisense benefits of Zod without the run-time overhead in production
+*`zod-dev` is a tiny 0.49kb abstraction on top of Zod to get the IDE Intellisense benefits of Zod without the run-time overhead in production.**
 
 # Usage
 
