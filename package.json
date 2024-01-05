@@ -1,10 +1,11 @@
 {
   "name": "zod-dev",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Functional mixin that adds 'devParse' to Zod in order to dynamically disable run-time parsing",
   "author": "Schalk Venter <venterschalk@gmail.com> (http://schalkventer.me/)",
   "type": "module",
   "source": "src/zod-dev.ts",
+  "types": "dist/zod-dev.d.ts",
   "exports": {
     "require": "./dist/zod-dev.cjs",
     "default": "./dist/zod-dev.modern.js"
