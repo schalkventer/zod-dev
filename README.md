@@ -1,4 +1,5 @@
-# 🐇 Zod Env
+# 🐇 Zod Env <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
+
 **Functional mixin that adds "envParse" to [Zod](https://zod.dev/) for
 conditionally disabling run-time parsing**  
 
@@ -53,7 +54,7 @@ const result = person.envParse(value)
 
 ![image](https://github.com/schalkventer/zod-env/assets/14258328/175e5f9d-0b5e-4804-b04e-e20bd36c04f0)
 
-The following `.ENV` variable will disable run-time checking, will still providing static-types in development:
+The following `.ENV` variable will disable run-time checking.
 
 ```dockerfile
 NODE_ENV="production"
