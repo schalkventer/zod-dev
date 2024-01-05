@@ -2,7 +2,7 @@
 # 🐇 Zod Dev <img align="right" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/714Gevq7rtL.jpg" width="125">
 [![](https://img.shields.io/npm/v/zod-dev)](https://www.npmjs.com/package/zod-dev)
 [![](https://img.shields.io/npm/dm/zod-dev.svg)](https://www.npmjs.com/package/zod-dev)
-![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social) 
+[![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social)](https://github.com/schalkventer/zod-dev)
 
 **A tiny 0.49kb functional mixin to disable [Zod](https://zod.dev/) run-time parsing.**  
 
@@ -10,7 +10,6 @@
 - [Usage](#usage)
 - [Performance](#performance)
 - [FAQ](#faq)
-
 
 # Motivation
 
