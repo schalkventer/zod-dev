@@ -1,4 +1,4 @@
-# 🐇 Zod Env <img align="right" src="https://github.com/schalkventer/zod-env/assets/14258328/e2927281-f07f-47d2-a1c6-40945ed3b6c6" width="125"> 
+# 🐇 Zod Env <img align="right" src="https://github.com/schalkventer/zod-env/assets/14258328/e2927281-f07f-47d2-a1c6-40945ed3b6c6" width="600"> 
 
 **Functional mixin that adds "envParse" to [Zod](https://zod.dev/) for
 conditionally disabling run-time parsing**  
