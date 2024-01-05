@@ -1,9 +1,9 @@
 {
   "name": "zod-env",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "type": "module",
-  "source": "src/index.js",
+  "source": "src/main.ts",
   "exports": {
     "require": "./dist/zod-env.cjs",
     "default": "./dist/zod-env.modern.js"
@@ -12,12 +12,12 @@
   "module": "./dist/zod-env.module.js",
   "unpkg": "./dist/zod-env.umd.js",
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch"
+    "build": "microbundle"
   },
   "author": "Schalk Venter <venterschalk@gmail.com> (http://schalkventer.me/)",
   "license": "ISC",
   "devDependencies": {
-    "microbundle": "^0.15.1"
+    "microbundle": "^0.15.1",
+    "zod": "^3.22.4"
   }
 }
