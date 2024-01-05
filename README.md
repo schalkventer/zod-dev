@@ -5,23 +5,23 @@ conditionally disabling run-time parsing**
 ## Motivation
 
 
-<img align="right" src="https://github.com/schalkventer/zod-env/assets/14258328/e2927281-f07f-47d2-a1c6-40945ed3b6c6" width="600">  Primarily inspired by a
+<img align="right" src="https://github.com/schalkventer/zod-env/assets/14258328/e2927281-f07f-47d2-a1c6-40945ed3b6c6" width="600">Primarily inspired by a
 [Yehonathan&nbsp;Sharvit](https://www.manning.com/books/data-oriented-programming)'s
-usage of conditional run-time validation using [AJV](https://ajv.js.org/) as
+usage of conditional validation using [AJV](https://ajv.js.org/) as
 part of a
 [data&#8209;oriented&nbsp;programming](https://en.wikipedia.org/wiki/Data-oriented_design)
 approach.
 
-While there are several benefits to using Zod over AJV, such as the automatic
-inference of types based on the created run-time schema, Zod was primarily
-designed for strict type-safety, especially for usage at the edges of your data
-ingress and egress. This means that Zod does not naturally lend itself to
+There are several benefits to using Zod over AJV, such as the automatic
+inference of types based on the created run-time schema. Howvever, Zod was primarily
+designed for strict type-safety, especially at the edges of your data
+ingress and egress. Therefore, Zod does not naturally lend itself to
 weaker-typed TypeScript or pure JavaScript projects. 
 
-However, due to the nature of Zod's schema inference, it is several orders of
-magnitude slower than AJV and other pure validation libraries. This means that
-even when using Zod in a strict type-safety manner, there might still be
-performance benefits to disabling run-time validation in production.
+Furthermore, due to the nature of Zod's schema inference, it is several orders of
+magnitude slower than AJV. This means that even when using Zod in a strict type-safety 
+manner, there might still be performance benefits to disabling run-time validation 
+in production.
 
 This plugin provides the above, while still preserving Zod's type inference
 functionality.
