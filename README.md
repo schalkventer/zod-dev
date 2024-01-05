@@ -36,6 +36,8 @@ strict Typescript type-safety, especially for usage at the edges of your
 project's data ingress and egress. For this reason, Zod does not naturally lend
 itself well to loosely typed TypeScript or pure JavaScript projects. 
 
+This package is a tiny 0.49kb abstraction on top of Zod in order to get the IDE Intellisense benefits of Zod without the run-time overhead in production
+
 # Usage
 
 ```bash
@@ -122,7 +124,7 @@ JavaScript projects.
 
 **How big is this package?**
 
-Pretty tiny, here is the entire codebase minified:
+Pretty tiny , here is the entire codebase minified:
 
 ```
 function r(){return r=Object.assign?Object.assign.bind():function(r){for(var n=1;n<arguments.length;n++){var t=arguments[n];for(var e in t)Object.prototype.hasOwnProperty.call(t,e)&&(r[e]=t[e])}return r},r.apply(this,arguments)}exports.createWithDev=function(n){return function(t){return r({},t,{devParse:function(r){return n?(console.log("skip"),t.parse(r)):r}})}},exports.withDev=function(n,t){return r({},n,{devParse:function(r){return t?n.parse(r):r}})};
