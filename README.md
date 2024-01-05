@@ -113,17 +113,7 @@ different environments, however since it merely accepts a boolean condition,
 parsing can effectively be toggle based on anything that can be expressed as
 `true` or `false` in JavaScript.
 
-**Is this meant to replace the Zod?**
+**Should I wrap all my schemas in `withDev`?**
 
-No. It simply to provide an additional use-case for Zod, as a way to
-conditionally do run-time checking in loosely typed TypeScript or pure
-JavaScript projects.
+No. It is recommended that you still use Zod as intended when validating external consumed by you app. For example during form submissions or JSON data from an REST endpoint. 
 
-**How big is this package?**
-
-Pretty tiny , here is the entire codebase minified:
-
-```
-function r(){return r=Object.assign?Object.assign.bind():function(r){for(var n=1;n<arguments.length;n++){var t=arguments[n];for(var e in t)Object.prototype.hasOwnProperty.call(t,e)&&(r[e]=t[e])}return r},r.apply(this,arguments)}exports.createWithDev=function(n){return function(t){return r({},t,{devParse:function(r){return n?(console.log("skip"),t.parse(r)):r}})}},exports.withDev=function(n,t){return r({},n,{devParse:function(r){return t?n.parse(r):r}})};
-//# sourceMappingURL=zod-dev.cjs.map
-```
