@@ -28,8 +28,10 @@ approach.
 > — _[Data-oriented Programming
 > (2022)]([https://www.manning.com/books/data-oriented-programming](https://blog.klipse.tech/javascript/2021/09/30/data-validation-with-json-schema.html))_
 
-There are several benefits to using Zod over AJV, most prominent being automatic
-inference of static types from schemas. However, Zod is primarily designed for
+**There are several benefits to using Zod over AJV, most prominent being automatic
+inference of static types from schemas.**
+
+However, Zod is primarily designed for
 strict Typescript type-safety, especially for usage at the edges of your
 project's data ingress and egress. For this reason, Zod does not naturally lend
 itself well to loosely typed TypeScript or pure JavaScript projects. 
