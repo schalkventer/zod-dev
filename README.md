@@ -5,10 +5,11 @@ conditionally disabling run-time parsing**
 
 ## Motivation
 
-Primarily inspired by [Yehonathan
-Sharvit](https://www.manning.com/books/data-oriented-programming)'s usage of
-conditional run-time validation using [AJV](https://ajv.js.org/) as part of a
-[data-oriented programming]9https://en.wikipedia.org/wiki/Data-oriented_design)
+Primarily inspired by a
+[Yehonathan&nbsp;Sharvit](https://www.manning.com/books/data-oriented-programming)'s
+usage of conditional run-time validation using [AJV](https://ajv.js.org/) as
+part of a
+[data-oriented&nbsp;programming](https://en.wikipedia.org/wiki/Data-oriented_design)
 approach.
 
 While there are several benefits to using Zod over AJV, such as the automatic
