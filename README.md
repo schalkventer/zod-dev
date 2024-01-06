@@ -12,6 +12,8 @@ parsing while preserving type inference.**
 - [Performance](#performance)
 - [FAQ](#faq)
 
+_⭐ If you find this tool useful please consider giving it a star on Github ⭐_
+
 # Motivation
 
 Primarily inspired by
