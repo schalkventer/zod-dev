@@ -141,8 +141,7 @@ validation in production environments.
 As per
 [Runtype&nbsp;Benchmarks](https://moltar.github.io/typescript-runtime-type-benchmarks/):
 
-![image](https://github.com/schalkventer/zod-dev/assets/14258328/490bbee0-d27c-44b1-a9d2-a151fc5aa756)
-![image](https://github.com/schalkventer/zod-dev/assets/14258328/a01fa8a7-6a34-4fcc-96da-0571f18b1345)
+![image](https://github.com/schalkventer/zod-dev/assets/14258328/81adc3e3-a3f2-41fa-bdd1-1da943e27f6f)
 
 If you're interested in the reason for the difference you can have a look at
 [the follow conversation](https://github.com/colinhacks/zod/issues/205).
