@@ -1,7 +1,7 @@
 {
   "name": "zod-dev",
-  "version": "1.0.0",
-  "description": "Functional mixin that adds 'devParse' to Zod in order to dynamically disable run-time parsing",
+  "version": "1.1.0",
+  "description": "A tiny abstract that conditionally disables Zod run-time parsing while preserving type inference",
   "author": "Schalk Venter <venterschalk@gmail.com> (http://schalkventer.me/)",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
@@ -25,7 +25,10 @@
   },
   "keywords": [
     "zod",
-    "env"
+    "env",
+    "runtime",
+    "environments",
+    "production"
   ],
   "bugs": "https://github.com/schalkventer/zod-dev/issues",
   "license": "MIT"
