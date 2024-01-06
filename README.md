@@ -1,7 +1,6 @@
 <!-- omit in toc -->
 # 🦞 Zod Dev
 [![](https://img.shields.io/npm/v/zod-dev)](https://www.npmjs.com/package/zod-dev)
-[![](https://img.shields.io/npm/dm/zod-dev.svg)](https://www.npmjs.com/package/zod-dev)
 [![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social)](https://github.com/schalkventer/zod-dev)
 
 **A tiny abstract that conditionally disables [Zod](https://zod.dev/) run-time
