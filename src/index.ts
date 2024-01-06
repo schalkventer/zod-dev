@@ -196,13 +196,11 @@ export const createArrayOperations = <T extends Schema>(
      * items, you can pass an optional third argument (`query`) that will be
      * used to filter the array before running the `operation` function.
      */
-    update: (props: {
-      items: object[];
-      operation: Operation;
-      query?: Query;
-    }): Item[] => {
-      const { items, operation, query } = props;
-
+    update: (
+      items: object[],
+      operation: Operation,
+      query?: Query
+    ): Item[] => {
       if (!operation)
         throw new Error("No operation supplied");
 
