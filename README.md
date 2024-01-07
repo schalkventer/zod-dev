@@ -158,9 +158,6 @@ const schema = z.object({
     age: z.number().int().min(0),
 })
 
-/**
- *
- */
 export const { isCollection, getIndices, get, add, update, remove } = createArrayOperations(
   isDev,
   schema
