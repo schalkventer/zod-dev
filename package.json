@@ -1,7 +1,7 @@
 {
   "name": "zod-dev",
-  "version": "1.2.1",
-  "description": "A tiny abstract that conditionally disables Zod run-time parsing while preserving type inference",
+  "version": "1.2.2",
+  "description": "Conditionally disables Zod run-time parsing in production while preserving type inference.",
   "author": "Schalk Venter <venterschalk@gmail.com> (http://schalkventer.me/)",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",

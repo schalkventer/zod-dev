@@ -3,12 +3,13 @@
 [![](https://img.shields.io/npm/v/zod-dev)](https://www.npmjs.com/package/zod-dev)
 [![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social)](https://github.com/schalkventer/zod-dev)
 
-**A tiny abstract that conditionally disables [Zod](https://zod.dev/) run-time
-parsing while preserving type inference.**  
+**Conditionally disables [Zod](https://zod.dev/) run-time parsing in production
+while preserving type inference.**  
 
 - [Motivation](#motivation)
 - [Basic Usage](#basic-usage)
-- [Factory Functions](#factory-functions)
+- [Constructors](#constructors)
+- [CRUD Operations](#crud-operations)
 - [Performance](#performance)
 - [FAQ](#faq)
 
@@ -32,10 +33,11 @@ approach.
 **There are several benefits to using [Zod](https://zod.dev/) over AJV, the most
 prominent being the automatic inference of static types from schemas.**
 
-However, [Zod](https://zod.dev/) is primarily designed for strict TypeScript
-type safety, especially for use at the edges of your project's data ingress and
-egress. For this reason, [Zod](https://zod.dev/) does not naturally lend itself
-well to loosely typed TypeScript or pure JavaScript projects.
+However, [Zod](https://zod.dev/) is primarily designed for strict type safety,
+especially for use with TypeScript at the edges of your project's data ingress
+and egress. For this reason, [Zod](https://zod.dev/) does not naturally lend
+itself well to pure JavaScript projects, usage of JSDoc and/or more loosely
+typed TypeScript projects by means of `// @ts-check`.
 
 # Basic Usage
 
@@ -61,8 +63,8 @@ const schema = withDev(isDev, z.object({
 }))
 
 const value = {
-    name: 'John Doe',
-    email: 'john@doe.com',
+    name: 'John Smith',
+    email: 'john@smith.com',
     age: 24,
 }
 
@@ -74,7 +76,7 @@ const result = schema.devParse(value)
 Note that `withDev` leaves the original schema untouched, so you can still, for
 example, use `person.parse(value)` or `person.shape.email` should you wish.
 
-# Factory Functions
+# Constructors
 
 If you don't want to pass the condition manually each time you can use one of
 the following factory functions that implicitly include the condition. This
@@ -98,8 +100,8 @@ const schema = withDev(isDev, z.object({
 }))
 
 const value = {
-    name: 'John Doe',
-    email: 'john@doe.com',
+    name: 'John Smith',
+    email: 'john@smith.com',
     age: 24,
 }
 
@@ -124,12 +126,101 @@ const schema = z.object({
 })
 
 const value = {
-    name: 'John Doe',
-    email: 'john@doe.com',
+    name: 'John Smith',
+    email: 'john@smith.com',
     age: 24,
 }
 
 const result = devParse(value, schema)
+```
+
+# CRUD Operations
+
+Due to the ubiquity of immutable helper functions as a means to manipulate data
+in Data-oriente Programming, `zod-dev` also provides the means to create a basic
+CRUD helper functions as a means to manipulate objects that share the same
+schema in an array list. 
+
+This is done by making use of `createArrayOperations` which accepts a schema and
+returns an object as follows:
+
+**All helpers automatically run `devParse` on all inputs and outputs
+to ensure data integrity.**
+
+```js
+import { z } from "zod";
+import { withDev, createArrayOperations } from "zod-dev";
+const isDev = import.meta.env.MODE !== "production";
+
+const schema = z.object({
+    name: z.string(),
+    email: z.string().email(),
+    age: z.number().int().min(0),
+})
+
+/**
+ *
+ */
+export const { isCollection, getIndices, get, add, update, remove } = createArrayOperations(
+  isDev,
+  schema
+);
+
+let data = isCollection([
+    {
+        id: '4a932261-93dc-448a-91e5-bf3541510cfa',
+        name: 'John Smith',
+        email: 'john@smith.com',
+        age: 24,
+    },
+    {
+        id: '61627dac-2cb5-4934-a9bb-c2075e932ce8',
+        name: 'Lorem Ipsum ',
+        email: 'lorem@ipsum.com',
+        age: 39,
+    }
+])
+
+console.log(getIndices(data, '61627dac-2cb5-4934-a9bb-c2075e932ce8')) // [1]
+console.log(getIndices(data, (item) => item.email.includes('@'))) // [0, 1]
+
+// `get` works exactly like `getIndices` but returns the actual items instead
+console.log(get(data, ['4a932261-93dc-448a-91e5-bf3541510cfa']))
+console.log(get(data, (item) => item.email.includes('@')))
+
+data = remove(data, '61627dac-2cb5-4934-a9bb-c2075e932ce8')
+data = remove(data, (item) => item.name === 'John Smith')
+
+// data is now `[]`
+
+data = add(
+    data, 
+    {
+        id: '61627dac-2cb5-4934-a9bb-c2075e932ce8',
+        name: 'Lorem Ipsum ',
+        email: 'lorem@ipsum.com',
+        age: 39,
+    }
+)
+
+data = add(
+    data, 
+    {
+        id: '4a932261-93dc-448a-91e5-bf3541510cfa',
+        name: 'John Smith',
+        email: 'john@smith.com',
+        age: 24,
+    },
+    'start'
+)
+
+// data is now same when created
+
+data = update(data, (item) => ({ ...item, age: item.age + 1 })) 
+// Ages are now `25` and `40`
+
+data = update(data, (item) => ({ ...item, name: item.name.toReversed() }), '4a932261-93dc-448a-91e5-bf3541510cfa')
+// `John Smith` name is now `htimS nhoJ`
 ```
 
 # Performance
