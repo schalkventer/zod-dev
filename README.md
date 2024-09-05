@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# 🦞 Zod Dev
+# 🚦 Zod Dev
 [![](https://img.shields.io/npm/v/zod-dev)](https://www.npmjs.com/package/zod-dev)
 [![](https://img.shields.io/github/stars/schalkventer/zod-dev?style=social)](https://github.com/schalkventer/zod-dev)
 
